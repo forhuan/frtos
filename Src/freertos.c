@@ -51,6 +51,9 @@
 #include "task.h"
 #include "cmsis_os.h"
 
+#include "stm32f7xx_hal.h"
+#include "gpio.h"
+
 /* USER CODE BEGIN Includes */     
 
 /* USER CODE END Includes */
@@ -132,7 +135,8 @@ void StartTask02(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+    osDelay(500);
+    HAL_GPIO_TogglePin(LED2_GPIO_Port,LED2_Pin);
   }
   /* USER CODE END StartTask02 */
 }
